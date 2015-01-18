@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddExpenses"
+            android:label="@string/title_activity_add_expenses" >
+        </activity>
+        <activity
+            android:name=".AddClaim"
+            android:label="@string/title_activity_add_claim" >
+        </activity>
     </application>
 
 </manifest>

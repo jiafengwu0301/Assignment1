@@ -1,24 +1,24 @@
 package com.example.assignmnet1;
 
+
+
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class AddExpenses extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.add_expenses);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.add_expenses, menu);
 		return true;
 	}
 
@@ -33,9 +33,6 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void addExpenses(MenuItem menu){
-		Toast.makeText(this, "Add Expenses", Toast.LENGTH_LONG).show();
-		Intent intent = new Intent(MainActivity .this, AddExpenses.class);
-		startActivity(intent);
-	}
+	
+	
 }

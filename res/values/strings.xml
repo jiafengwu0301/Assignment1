@@ -4,5 +4,28 @@
     <string name="app_name">Assignmnet1</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_add_expenses">Add Expenses</string>
+
+    <string-array name="For_item">
+        <item>Air Fare</item>
+        <item>Ground Transport</item>
+        <item>Vehicle Rental</item>
+        <item>Fuel</item>
+        <item>Parking</item>
+        <item>Registration</item>
+        <item>Accommodation</item>
+        <item>Meal</item>
+    </string-array>
+    <string-array name="Currency">
+        <item>CAD</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>CNY</item>
+        <item>INR</item>
+        <item>AUD</item>
+    </string-array>
+
+    <string name="title_activity_add_claim">AddClaim</string>
 
 </resources>
