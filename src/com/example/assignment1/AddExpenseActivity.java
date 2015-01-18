@@ -1,13 +1,11 @@
-package com.example.assignmnet1;
-
-
+package com.example.assignment1;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class AddExpenses extends Activity {
+public class AddExpenseActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

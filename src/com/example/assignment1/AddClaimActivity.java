@@ -1,11 +1,14 @@
-package com.example.assignmnet1;
+package com.example.assignment1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
-public class AddClaim extends Activity {
+public class AddClaimActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,4 +34,22 @@ public class AddClaim extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	public void addExpense(MenuItem menu){
+		Toast.makeText(this, "Add Expenses", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(AddClaimActivity .this, AddExpenseActivity.class);
+		startActivity(intent);
+	}
+	
+	public void addItem(View v){
+		Toast.makeText(this, "Add A Expenses", Toast.LENGTH_SHORT).show();
+		
+	}
+	
+	public void Cancel(View v){
+		Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(AddClaimActivity .this, MainActivity.class);
+		startActivity(intent);
+	}
+	
 }

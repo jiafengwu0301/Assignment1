@@ -1,4 +1,4 @@
-package com.example.assignmnet1;
+package com.example.assignment1;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -33,9 +33,9 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void addExpenses(MenuItem menu){
-		Toast.makeText(this, "Add Expenses", Toast.LENGTH_LONG).show();
-		Intent intent = new Intent(MainActivity .this, AddExpenses.class);
+	public void addClaim(MenuItem menu){
+		Toast.makeText(this, "Add Claim", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(MainActivity .this, AddClaimActivity.class);
 		startActivity(intent);
 	}
 }
