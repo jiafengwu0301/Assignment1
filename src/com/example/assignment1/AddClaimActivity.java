@@ -14,6 +14,7 @@ public class AddClaimActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_claim);
+		getActionBar().setTitle("Add Claim");
 	}
 
 	@Override

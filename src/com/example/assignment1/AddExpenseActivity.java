@@ -11,6 +11,7 @@ public class AddExpenseActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_expenses);
+		getActionBar().setTitle("Add Expense");
 	}
 
 	@Override
