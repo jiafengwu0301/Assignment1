@@ -9,12 +9,12 @@
     tools:context="com.example.assignmnet1.AddClaimActicity" >
 
     <TextView
-        android:id="@+id/Name_textView"
+        android:id="@+id/Destination_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Name:"
+        android:text="Destination:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
@@ -23,81 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/To_editText"
         android:layout_alignBottom="@+id/To_editText"
-        android:layout_alignLeft="@+id/FromDate_textView"
+        android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/To_editText"
         android:ems="10"
         android:inputType="date" >
 
         <requestFocus />
     </EditText>
-
-    <EditText
-        android:id="@+id/Name_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Name_textView"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/Name_textView"
-        android:ems="10" />
-
-    <TextView
-        android:id="@+id/FromDate_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Name_editText"
-        android:layout_below="@+id/Name_editText"
-        android:layout_marginTop="15dp"
-        android:text="From:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/To_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ToDate_textView"
-        android:layout_below="@+id/ToDate_textView"
-        android:ems="10"
-        android:inputType="date" />
-
-    <TextView
-        android:id="@+id/ToDate_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/FromDate_textView"
-        android:layout_alignBottom="@+id/FromDate_textView"
-        android:layout_marginLeft="84dp"
-        android:layout_toRightOf="@+id/Name_textView"
-        android:text="To:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/Destination_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/From_editText"
-        android:layout_below="@+id/From_editText"
-        android:layout_marginTop="14dp"
-        android:text="Destination:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/Destination_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Destination_textView"
-        android:layout_below="@+id/Destination_textView"
-        android:ems="10"
-        android:inputType="textMultiLine" />
-
-    <TextView
-        android:id="@+id/Descrption_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Destination_editText"
-        android:layout_below="@+id/Destination_editText"
-        android:layout_marginTop="15dp"
-        android:text="Descriptions:"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/Descriptions_editText"
@@ -110,25 +42,75 @@
         android:ems="10"
         android:inputType="textMultiLine" />
 
-    <Button
-        android:id="@+id/Add_Button"
+    <EditText
+        android:id="@+id/Destination_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Cancel_Button"
-        android:layout_alignBottom="@+id/Cancel_Button"
-        android:layout_alignLeft="@+id/To_editText"
-        android:layout_alignRight="@+id/Descriptions_editText"
-        android:onClick="addItem"
-        android:text="Add" />
+        android:layout_alignLeft="@+id/Destination_textView"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Destination_textView"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/FromDate_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Destination_editText"
+        android:layout_below="@+id/Destination_editText"
+        android:text="From:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/To_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ToDate_textView"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ToDate_textView"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/Descrption_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/From_editText"
+        android:layout_below="@+id/From_editText"
+        android:layout_marginTop="14dp"
+        android:text="Descriptions:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
         android:id="@+id/Cancel_Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Add_Button"
+        android:layout_alignBottom="@+id/Add_Button"
         android:layout_alignLeft="@+id/Descriptions_editText"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/From_editText"
+        android:layout_toLeftOf="@+id/Add_Button"
         android:onClick="Cancel"
         android:text="Cancel" />
+
+    <Button
+        android:id="@+id/Add_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/To_editText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="addItem"
+        android:text="Add" />
+
+    <TextView
+        android:id="@+id/ToDate_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/FromDate_textView"
+        android:layout_alignBottom="@+id/FromDate_textView"
+        android:layout_marginLeft="44dp"
+        android:layout_toRightOf="@+id/Destination_textView"
+        android:text="To:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
