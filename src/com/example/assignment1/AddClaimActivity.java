@@ -36,15 +36,11 @@ public class AddClaimActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public void addExpense(MenuItem menu){
-		Toast.makeText(this, "Add Expenses", Toast.LENGTH_SHORT).show();
-		Intent intent = new Intent(AddClaimActivity .this, AddExpenseActivity.class);
-		startActivity(intent);
-	}
 	
 	public void addItem(View v){
 		Toast.makeText(this, "Add A Expenses", Toast.LENGTH_SHORT).show();
-		
+		Intent intent = new Intent(AddClaimActivity .this, List_Expense_Activity.class);
+		startActivity(intent);
 	}
 	
 	public void Cancel(View v){
@@ -52,5 +48,4 @@ public class AddClaimActivity extends Activity {
 		Intent intent = new Intent(AddClaimActivity .this, MainActivity.class);
 		startActivity(intent);
 	}
-	
 }

@@ -39,4 +39,5 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(MainActivity .this, AddClaimActivity.class);
 		startActivity(intent);
 	}
+	
 }
