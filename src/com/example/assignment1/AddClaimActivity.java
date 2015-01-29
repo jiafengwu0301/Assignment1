@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.Toast;
 
 public class AddClaimActivity extends Activity {
+	
+	
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
