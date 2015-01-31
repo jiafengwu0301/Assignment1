@@ -1,25 +1,68 @@
 package com.example.assignment1;
 
 import java.util.ArrayList;
-
+import java.util.Collection;
 
 public class ClaimList {
 	
-	ArrayList<Claim> claimList;
-	
-	public ClaimList(){
+	protected ArrayList<Claim> claimList = null;
+	protected ArrayList<Listener> listeners;
+
+	public ClaimList(){	
+		// create a new claim list 
 		claimList = new ArrayList<Claim>();
+		listeners = new ArrayList<Listener>();
 	}
 	
-	public ArrayList<Claim> getArrayClaim() {
+	public Collection<Claim> getClaim() {
+		// return the collection of our claims
 		return claimList;
 	}
-	
-	public void addClaim(Claim testClaim){
-		this.claimList.add(testClaim);
+
+	// add a claim to our list of claims
+	public void addClaim(Claim testClaim) {		
+		claimList.add(testClaim);
+		notifyListeners();
+	}
+
+	// delete a claim from the claim list
+	public void deleteClaim(Claim testClaim) {		
+		claimList.remove(testClaim);	
+		notifyListeners();
 	}
 	
-	public void removeClaim(Claim testClaim){
-		claimList.remove(testClaim);
+	public void editClaim() {
+		notifyListeners();
+	}
+
+	public int size(){	
+		return claimList.size();		
+	}
+
+	public boolean contains(Claim testClaim) {
+		return claimList.contains(testClaim);
+	}
+	
+	public Claim chooseClaim() throws EmptyClaimListException {
+		int size = claimList.size();
+		if (size <= 0) {
+			throw new EmptyClaimListException();
+		}
+		int index = 0;
+		return claimList.get(index);
+	}
+	
+	public void notifyListeners() {
+		for (Listener listener: listeners) {
+			listener.update();
+		}
+	}
+	
+	public void addListener(Listener l) {
+		listeners.add(l);
+	}
+	
+	public void removeListener (Listener l) {
+		listeners.remove(l);
 	}
 }

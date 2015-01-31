@@ -6,20 +6,39 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.Button;
 
 public class AddClaimActivity extends Activity {
-	
-	
-	
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_claim);
 		getActionBar().setTitle("Add Claim");
+
+		
+		Button add_claim = (Button) findViewById(R.id.Add_Button);
+		add_claim.setOnClickListener(new View.OnClickListener()
+		{
+
+			public void onClick(View v){
+				
+				Toast.makeText(AddClaimActivity.this, "Add a claim", Toast.LENGTH_SHORT).show();
+				ClaimListController controller = new ClaimListController();
+				EditText den = (EditText) findViewById(R.id.Destination_editText);
+				EditText fdate = (EditText) findViewById(R.id.From_editText);
+				EditText tdate = (EditText) findViewById(R.id.To_editText);
+				EditText des = (EditText) findViewById(R.id.Descriptions_editText);
+				controller.addClaim(new Claim(den.getText().toString(), fdate.getText().toString(), tdate.getText().toString(), des.getText().toString()));	
+				finish();
+			}
+		});
+		
 	}
+
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -41,12 +60,12 @@ public class AddClaimActivity extends Activity {
 	}
 	
 	
-	public void addItem(View v){
-		Toast.makeText(this, "Add A Expenses", Toast.LENGTH_SHORT).show();
-		Intent intent = new Intent(AddClaimActivity .this, List_Expense_Activity.class);
-		startActivity(intent);
-	}
-	
+//	public void addItem(View v){
+//		Toast.makeText(this, "Add A Expenses", Toast.LENGTH_SHORT).show();
+//		Intent intent = new Intent(AddClaimActivity .this, List_Expense_Activity.class);
+//		startActivity(intent);
+//	}
+//	
 	public void Cancel(View v){
 		Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(AddClaimActivity .this, MainActivity.class);

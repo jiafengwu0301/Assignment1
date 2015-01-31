@@ -24,6 +24,7 @@
         android:layout_alignLeft="@+id/When_textView"
         android:layout_below="@+id/When_textView"
         android:ems="10"
+        android:hint="YYYY-MM-DD"
         android:inputType="date" />
 
     <Spinner

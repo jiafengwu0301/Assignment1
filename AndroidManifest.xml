@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.assignment1.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,16 +23,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="AddExpenseActivity"
+            android:name=".AddExpenseActivity"
             android:label="@string/title_activity_add_expense" >
         </activity>
         <activity
-            android:name="com.example.assignment1.AddClaimActivity"
+            android:name=".AddClaimActivity"
             android:label="@string/title_activity_add_claim" >
         </activity>
         <activity
-            android:name="com.example.assignment1.List_Expense_Activity"
+            android:name=".List_Expense_Activity"
             android:label="@string/title_activity_list_expense" >
+        </activity>
+        <activity
+            android:name=".EditClaimActivity"
+            android:label="@string/title_activity_edit_claim" >
         </activity>
     </application>
 
