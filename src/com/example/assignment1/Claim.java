@@ -28,6 +28,7 @@ public class Claim implements Comparable<Claim>{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		this.des=desp;
 	}
 	
 	public String getDenstation(){

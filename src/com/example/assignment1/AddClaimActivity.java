@@ -26,7 +26,7 @@ public class AddClaimActivity extends Activity {
 			public void onClick(View v){
 				
 				Toast.makeText(AddClaimActivity.this, "Add a claim", Toast.LENGTH_SHORT).show();
-				ClaimListController controller = new ClaimListController();
+				ListController controller = new ListController();
 				EditText den = (EditText) findViewById(R.id.Destination_editText);
 				EditText fdate = (EditText) findViewById(R.id.From_editText);
 				EditText tdate = (EditText) findViewById(R.id.To_editText);

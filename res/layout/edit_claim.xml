@@ -30,7 +30,7 @@
         android:id="@+id/from_edit_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/expense_name_textView"
         android:layout_below="@+id/textView2"
         android:layout_toLeftOf="@+id/to_edit_editText"
         android:ems="10"
@@ -62,7 +62,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/expense_name_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"

@@ -23,23 +23,19 @@ public class EditClaimActivity extends Activity {
 		// set up our layout to be edit_claim
 		setContentView(R.layout.edit_claim);
 		getActionBar().setTitle("Edit Claim");
-		
-		// call our claim list of claims with claims and list
-		Collection<Claim> claim = ClaimListController.getClaimList().getClaim();
+
+		Collection<Claim> claim = ListController.getClaimList().getClaim();
 		ArrayList<Claim> list = new ArrayList<Claim>(claim);
 		
-		// get the id of our name edit text that we will update with a new name
-		// we will also the our start date, end date and details from the edit text too 
 		EditText den = (EditText) findViewById(R.id.edit_Destination_textView);
 		EditText fdate = (EditText) findViewById(R.id.from_edit_editText);
 		EditText tdate = (EditText) findViewById(R.id.to_edit_editText);
 		EditText des = (EditText) findViewById(R.id.edit_Description);
 		
-		// the old start date, old end date, and old details
-		int setposition = ClaimPosition.getPosition();
+		int setposition = Position.getPosition();
 		den.setText(list.get(setposition).toString());
 		
-		SimpleDateFormat date = new SimpleDateFormat("yyyy/mm/dd",Locale.getDefault());
+		SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
 		fdate.setText(date.format(list.get(setposition).fdateString()));
 		tdate.setText(date.format(list.get(setposition).tdateString()));
 		des.setText(list.get(setposition).desString());
@@ -55,10 +51,9 @@ public class EditClaimActivity extends Activity {
 				EditText tdate = (EditText) findViewById(R.id.to_edit_editText);
 				EditText des = (EditText) findViewById(R.id.edit_Description);
 				
-				// call our claim class through claims and list
-				Collection<Claim> claims = ClaimListController.getClaimList().getClaim();
+				Collection<Claim> claims = ListController.getClaimList().getClaim();
 				ArrayList<Claim> list = new ArrayList<Claim>(claims);
-				int setposition = ClaimPosition.getPosition();
+				int setposition = Position.getPosition();
 				((Claim) list.get(setposition)).setDenstation(den.getText().toString());
 				
 				SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
@@ -73,7 +68,7 @@ public class EditClaimActivity extends Activity {
 					e.printStackTrace();
 				}
 				((Claim) list.get(setposition)).setDes(des.getText().toString());
-				ClaimListController controller = new ClaimListController();
+				ListController controller = new ListController();
 				controller.editClaim();
 				finish();
 

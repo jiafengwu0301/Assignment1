@@ -28,13 +28,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		getActionBar().setTitle("Travel Expense Tracker");
-		loadListView();
-		
-	}
-	
-	private void loadListView() {
-        ListView listView = (ListView) findViewById(R.id.Expense_View);
-        Collection<Claim> claims = ClaimListController.getClaimList().getClaim();
+		ListView listView = (ListView) findViewById(R.id.Expense_View);
+        Collection<Claim> claims = ListController.getClaimList().getClaim();
         
         final ArrayList<Claim> list = new ArrayList<Claim>(claims);
         Collections.sort(list);
@@ -42,10 +37,10 @@ public class MainActivity extends Activity {
         		android.R.layout.simple_list_item_1, list);
         listView.setAdapter(claimAdapter);
 
-        ClaimListController.getClaimList().addListener(new Listener() {
+        ListController.getClaimList().addListener(new Listener() {
         	public void update() {
         		list.clear();
-        		Collection<Claim> claims = ClaimListController.getClaimList().getClaim();
+        		Collection<Claim> claims = ListController.getClaimList().getClaim();
         		list.addAll(claims);
         		Collections.sort(list);
         		claimAdapter.notifyDataSetChanged();
@@ -67,7 +62,7 @@ public class MainActivity extends Activity {
 						adb2.setPositiveButton("Yes", new OnClickListener() {
 							public void onClick(DialogInterface dialog, int which) {
 								Claim claim = list.get(finalPosition);
-								ClaimListController.getClaimList().deleteClaim(claim);
+								ListController.getClaimList().deleteClaim(claim);
 							}
 						});
 						adb2.setNegativeButton("No", new OnClickListener() {
@@ -80,14 +75,14 @@ public class MainActivity extends Activity {
 				adb.setNeutralButton("Edit", new OnClickListener() {
 					public void onClick (DialogInterface dialog, int which) {
 						Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
-						new ClaimPosition(position);
+						new Position(position);
 				    	startActivity(intent);
 					}
 				});
 				adb.setNegativeButton("Cancel", new OnClickListener() {
 					public void onClick (DialogInterface dialog, int which) {
 						Intent intent = new Intent(MainActivity.this, MainActivity.class);
-						new ClaimPosition(position);
+						new Position(position);
 				    	startActivity(intent);
 					}
 				});
@@ -102,6 +97,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
         });
+		
 	}
 
 	@Override

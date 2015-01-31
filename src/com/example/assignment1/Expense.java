@@ -1,92 +1,109 @@
-//package com.example.assignment1;
-//
-//import java.text.ParseException;
-//import java.text.SimpleDateFormat;
-//import java.util.Date;
-//import java.util.Locale;
-//
-//import android.widget.Spinner;
-//
-//public class Expense {
-//	private Spinner for;
-//	private Date d_from = new Date();
-//	private Date d_to = new Date();
-//	private String des;
-//	SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
-//	
-//	
-//	public Claim(String den, String from, String to, String desp) {
-//		this.denstation = den;
-//		try {
-//			this.d_from = date.parse(from);
-//		} catch (ParseException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		try {
-//			this.d_to = date.parse(to);
-//		} catch (ParseException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-//	
-//	public String getDenstation(){
-//		return denstation;
-//	}
-//	
-//	public Date getDFrom(){
-//		return d_from;
-//	}
-//	
-//	public Date getDTo(){
-//		return d_to;
-//	}
-//	
-//	public String getDes(){
-//		return des;
-//	}
-//	
-//	public String toString() {
-//		return getDenstation();
-//	}
-//	
-//	// used to get the start date of the claim
-//	public Date fdateString() {
-//		return getDFrom();
-//	}
-//	
-//	// used to get the end date of the claim
-//	public Date tdateString() {
-//		return getDTo();
-//	}
-//	
-//	// used to get the details of the claim
-//	public String desString() {
-//		return getDes();
-//	}
-//	
-//	public String setDenstation(String denstation){
-//		this.denstation=denstation;
-//		return denstation;
-//	}
-//	
-//	public Date setDfrom(Date d_from){
-//		this.d_from=d_from;
-//		return d_from;
-//	}
-//	
-//	public Date setDTo(Date d_to){
-//		this.d_to=d_to;
-//		return d_to;
-//	}
-//	
-//	public String setDes(String des){
-//		this.des=des;
-//		return des;
-//	}
-//
-//	public int compareTo(Claim another) {
-//		return getDFrom().compareTo(another.getDFrom());
-//	}
-//}
+package com.example.assignment1;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+
+public class Expense implements Comparable<Expense>{
+	private String name;
+	private String item;
+	private Date when = new Date();
+	private String des;
+	private float cost;
+	private String curr;
+	
+	SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
+	
+	
+	public Expense(String name, String item, String when, float cost, String currency,String des) {
+		this.name = name;
+		this.item = item;
+		try {
+			this.when = date.parse(when);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.cost=cost;
+		this.curr=currency;
+		this.des = des;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public String getItem(){
+		return item;
+	}
+	
+	public Date getWhen(){
+		return when;
+	}
+	
+	public String getDescription(){
+		return des;
+	}
+	public float getCost(){
+		return cost;
+	}
+	
+	public String getCurr(){
+		return curr;
+	}
+	
+	public String toName() {
+		return getName();
+	}
+
+	public String toItem() {
+		return getItem();
+	}
+
+	public Date toWhen() {
+		return getWhen();
+	}
+	
+	public String toDescription() {
+		return getDescription();
+	}
+	
+	public float toCost(){
+		return getCost();
+	}
+	
+	public String toCurr(){
+		return getCurr();
+	}
+	
+	public String setName(String name){
+		this.name=name;
+		return name;
+	}
+	
+	public Date setWhen(Date when){
+		this.when=when;
+		return when;
+	}
+
+	public String setDescription(String des){
+		this.des = des;
+		return des;
+	}
+	
+	public float setCost(float cost){
+		this.cost = cost;
+		return cost;
+	}
+	
+	public String setCurr(String curr){
+		this.curr = curr;
+		return curr;
+	}
+
+	public int compareTo(Expense another) {
+		return getWhen().compareTo(another.getWhen());
+	}
+}
