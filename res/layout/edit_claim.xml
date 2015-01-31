@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.assignment1.EditClaimActivity" >
+
+    <TextView
+        android:id="@+id/des_Testview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Destination:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/edit_Destination_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/des_Testview"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/des_Testview"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/from_edit_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView2"
+        android:layout_toLeftOf="@+id/to_edit_editText"
+        android:ems="10"
+        android:inputType="date" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/to_edit_editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/from_edit_editText"
+        android:layout_alignBottom="@+id/from_edit_editText"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_Destination_textView"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/des_Testview"
+        android:text="To:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/edit_Destination_textView"
+        android:text="From:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <Button
+        android:id="@+id/edit_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/from_edit_editText"
+        android:onClick="editCancel"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/edit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_cancel_button"
+        android:layout_alignBottom="@+id/edit_cancel_button"
+        android:layout_alignLeft="@+id/to_edit_editText"
+        android:layout_alignRight="@+id/to_edit_editText"
+        android:text="Edit" />
+
+    <TextView
+        android:id="@+id/edit_descriptions_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/from_edit_editText"
+        android:layout_below="@+id/from_edit_editText"
+        android:layout_marginTop="17dp"
+        android:text="Descriptions:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/edit_Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_cancel_button"
+        android:layout_alignLeft="@+id/edit_descriptions_textView"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/edit_descriptions_textView"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+</RelativeLayout>
