@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -95,6 +96,27 @@ public class MainActivity extends Activity {
 			}
         });
 		
+	}
+	//http://stackoverflow.com/questions/8430805/android-clicking-twice-the-back-button-to-exit-activity 01/31/2015
+	private boolean doubleBackToExitPressedOnce = false;
+	@Override
+	public void onBackPressed(){
+		if (doubleBackToExitPressedOnce) {
+	        super.onBackPressed();
+	        //startActivity(new Intent(MainActivity.this, MainActivity.class));
+	        return;
+	    }
+
+	    this.doubleBackToExitPressedOnce = true;
+	    Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+	    new Handler().postDelayed(new Runnable() {
+
+	        @Override
+	        public void run() {
+	            doubleBackToExitPressedOnce=false;                       
+	        }
+	    }, 2000);
 	}
 
 	@Override

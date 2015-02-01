@@ -8,23 +8,19 @@ public class ExpenseList {
 	protected ArrayList<Listener> listeners;
 
 	public ExpenseList(){	
-		// create a new Expense list 
 		ExpenseList = new ArrayList<Expense>();
 		listeners = new ArrayList<Listener>();
 	}
 	
 	public Collection<Expense> getExpense() {
-		// return the collection of our Expenses
 		return ExpenseList;
 	}
 
-	// add a Expense to our list of Expenses
 	public void addExpense(Expense testExpense) {		
 		ExpenseList.add(testExpense);
 		notifyListeners();
 	}
 
-	// delete a Expense from the Expense list
 	public void deleteExpense(Expense testExpense) {		
 		ExpenseList.remove(testExpense);	
 		notifyListeners();

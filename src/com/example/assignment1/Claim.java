@@ -15,11 +15,11 @@ public class Claim implements Serializable{
 	 */
 	private static final long serialVersionUID = 8510597131317856369L;
 	
-	private String denstation;
-	private Date d_from = new Date();
-	private Date d_to = new Date();
-	private String des;
-	private String status;
+	protected String denstation;
+	protected Date d_from = new Date();
+	protected Date d_to = new Date();
+	protected String des;
+	protected String status;
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
 	
 	protected ArrayList<Expense> ExpenseList;

@@ -30,11 +30,15 @@
     <string name="title_activity_add_expense">Add Expense</string>
     <string name="title_activity_edit_claim">Edit Claim</string>
     <string name="title_activity_edit_expense">Edit Expense</string>
+
     <string-array name="Status">
-        <item >In Progress</item>
-        <item >Submitted</item>
-        <item >Returned</item>
-        <item >Approved</item>
+        <item>In Progress</item>
+        <item>Submitted</item>
+        <item>Returned</item>
+        <item>Approved</item>
     </string-array>
+
+    <string name="title_activity_email_claim">Email Claim</string>
+    <string name="title_activity_claim_summary">Claim Summary</string>
 
 </resources>

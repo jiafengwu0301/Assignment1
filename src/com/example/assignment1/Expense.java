@@ -12,30 +12,32 @@ public class Expense implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 8408038633806370834L;
-	private String name;
-	private String item;
-	private Date when = new Date();
-	private float cost;
-	private String curr;
-	private String des;
+	
+	
+	protected String name;
+	protected String item;
+	protected Date when = new Date();
+	protected float cost;
+	protected String curr;
+	protected String des;
 	
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
 	
-	
-	public Expense(String name, String item, String when, float cost, String currency,String des) {
-		this.name = name;
-		this.item = item;
+	public Expense(String na, String it, String wh, float fl ,
+			String cu, String de) {
+		this.name = na;
+		this.item = it;
 		try {
-			this.when = date.parse(when);
+			this.when = date.parse(wh);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		this.cost=cost;
-		this.curr=currency;
-		this.des = des;
+		this.cost = fl;
+		this.des = de;
+		this.curr = cu;
 	}
-	
+
 	public String getName(){
 		return name;
 	}

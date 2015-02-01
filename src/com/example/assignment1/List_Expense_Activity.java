@@ -28,20 +28,20 @@ public class List_Expense_Activity extends Activity {
 		
 		ListView listView = (ListView) findViewById(R.id.expense_listView);
         
-        int position = Position.getPosition();
+		int setposition = Position.getPosition();
         Collection<Claim> claim = ListController.getClaimList().getClaim();
-		ArrayList<Claim> list = new ArrayList<Claim>(claim);
-        
-        final ArrayList<Expense> expense = list.get(position).getItemArray();
+		ArrayList<Claim> claimlist = new ArrayList<Claim>(claim);
+
+        final ArrayList<Expense> expense = claimlist.get(setposition).getItemArray();
         final ArrayAdapter<Expense> expenseAdapter = new ArrayAdapter<Expense>(this, 
         		android.R.layout.simple_list_item_1, expense);
         listView.setAdapter(expenseAdapter);
-
+        
         ListController.getExpenseList().addListener(new Listener() {
         	public void update() {
         		expense.clear();
-        		Collection<Expense> Expenses = ListController.getExpenseList().getExpense();
-        		expense.addAll(Expenses);
+        		Collection<Expense> items = ListController.getExpenseList().getExpense();
+        		expense.addAll(items);
         		expenseAdapter.notifyDataSetChanged();
         	}
         });
@@ -87,17 +87,16 @@ public class List_Expense_Activity extends Activity {
 				});
 				adb.show();
 				return false;
-				}
-			});
-//        listView.setOnItemClickListener(new OnItemClickListener() {
-//        	@Override
-//			public void onItemClick(AdapterView<?> adapterView, View view,int position, long id) {
-//				Intent intent = new Intent(MainActivity.this, List_Expense_Activity.class);
-//				startActivity(intent);
-//			}
-//        });
+			}
+		});
 	}
 
+	@Override
+	public void onBackPressed(){
+	    super.onBackPressed(); 
+	    startActivity(new Intent(List_Expense_Activity.this, MainActivity.class));
+	    finish();
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -109,6 +108,18 @@ public class List_Expense_Activity extends Activity {
 	public void addExpense(MenuItem menu){
 		Toast.makeText(this, "Add A Expenses", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(List_Expense_Activity .this,AddExpenseActivity.class);
+		startActivity(intent);
+	}
+	
+	public void email(MenuItem menu){
+		Toast.makeText(this, "Email Claim", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(List_Expense_Activity .this,EmailClaim.class);
+		startActivity(intent);
+	}
+	
+	public void summary(View v){
+		Toast.makeText(this, "Show Summary", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(List_Expense_Activity .this,ClaimSummary.class);
 		startActivity(intent);
 	}
 

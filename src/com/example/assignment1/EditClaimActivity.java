@@ -79,8 +79,10 @@ public class EditClaimActivity extends Activity {
 				finish();
 
 			}
+			
 		});
 	}
+	
 	public void editCancel(View v){
 		Toast.makeText(this, "Cancel", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(EditClaimActivity .this, MainActivity.class);
