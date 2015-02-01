@@ -26,7 +26,7 @@ To email the claim. Go to the claim, click Email Cliam at the menu section. Afte
 
 By exit the app, go to the main activity. Then, double click the back button to exit.
 
-#Licensse
+#License
 Expense Tracker: record the expense Copyright (C) 2015 Jiafeng Wu jiafeng1@ualberta.ca
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
