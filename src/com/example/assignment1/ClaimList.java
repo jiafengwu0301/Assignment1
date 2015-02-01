@@ -43,10 +43,10 @@ public class ClaimList {
 		return claimList.contains(testClaim);
 	}
 	
-	public Claim chooseClaim() throws EmptyClaimListException {
+	public Claim chooseClaim() throws EmptyListException {
 		int size = claimList.size();
 		if (size <= 0) {
-			throw new EmptyClaimListException();
+			throw new EmptyListException();
 		}
 		int index = 0;
 		return claimList.get(index);
@@ -66,3 +66,4 @@ public class ClaimList {
 		listeners.remove(l);
 	}
 }
+

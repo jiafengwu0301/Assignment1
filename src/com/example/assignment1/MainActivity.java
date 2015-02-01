@@ -2,7 +2,6 @@ package com.example.assignment1;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -32,7 +31,6 @@ public class MainActivity extends Activity {
         Collection<Claim> claims = ListController.getClaimList().getClaim();
         
         final ArrayList<Claim> list = new ArrayList<Claim>(claims);
-        Collections.sort(list);
         final ArrayAdapter<Claim> claimAdapter = new ArrayAdapter<Claim>(this, 
         		android.R.layout.simple_list_item_1, list);
         listView.setAdapter(claimAdapter);
@@ -42,7 +40,6 @@ public class MainActivity extends Activity {
         		list.clear();
         		Collection<Claim> claims = ListController.getClaimList().getClaim();
         		list.addAll(claims);
-        		Collections.sort(list);
         		claimAdapter.notifyDataSetChanged();
         	}
         });

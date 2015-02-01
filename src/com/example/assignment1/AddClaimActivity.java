@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.Button;
 
@@ -31,7 +32,10 @@ public class AddClaimActivity extends Activity {
 				EditText fdate = (EditText) findViewById(R.id.From_editText);
 				EditText tdate = (EditText) findViewById(R.id.To_editText);
 				EditText des = (EditText) findViewById(R.id.Descriptions_editText);
-				controller.addClaim(new Claim(den.getText().toString(), fdate.getText().toString(), tdate.getText().toString(), des.getText().toString()));	
+				Spinner status = (Spinner) findViewById(R.id.st_spinner);
+				String st = status.getSelectedItem().toString();
+				controller.addClaim(new Claim(den.getText().toString(), fdate.getText().toString(), 
+						tdate.getText().toString(), des.getText().toString(), st));	
 				finish();
 			}
 		});

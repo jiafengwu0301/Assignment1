@@ -1,6 +1,6 @@
 package com.example.assignment1;
 
-public class EmptyClaimListException extends Exception {
+public class EmptyListException extends Exception {
 
 	/**
 	 * 

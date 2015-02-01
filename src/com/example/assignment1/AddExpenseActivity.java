@@ -1,6 +1,9 @@
 package com.example.assignment1;
 
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -25,8 +28,10 @@ public class AddExpenseActivity extends Activity {
 			public void onClick(View v) {
 				// Test text "Added claim!"
 				Toast.makeText(AddExpenseActivity.this, "Add a Expense!", Toast.LENGTH_SHORT).show();
-				
-				ListController controller = new ListController();
+				int setposition = Position.getPosition();
+				Collection<Claim> claims = ListController.getClaimList().getClaim();
+				ArrayList<Claim> alist = new ArrayList<Claim>(claims);
+				ListController controller = alist.get(setposition).getController();
 				
 				// extract our name of the claim from the edit text and add it to our claim list
 				EditText name = (EditText) findViewById(R.id.expense_name_editText);

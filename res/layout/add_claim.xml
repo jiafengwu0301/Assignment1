@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.assignmnet1.AddClaimActicity" >
+    tools:context="com.example.assignmnet1.AddClaimActicity"  >
 
     <TextView
         android:id="@+id/Destination_textView"
@@ -37,7 +37,7 @@
         android:id="@+id/Descriptions_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/Add_Button"
+        android:layout_above="@+id/st_spinner"
         android:layout_alignLeft="@+id/Descrption_textView"
         android:layout_alignRight="@+id/To_editText"
         android:layout_below="@+id/Descrption_textView"
@@ -103,7 +103,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:onClick="addClaimAction"
-        android:text="Add" />
+        android:text="Finish" />
 
     <TextView
         android:id="@+id/ToDate_textView"
@@ -115,5 +115,13 @@
         android:layout_toRightOf="@+id/Destination_textView"
         android:text="To:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/st_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Cancel_Button"
+        android:layout_alignLeft="@+id/Cancel_Button"
+        android:entries="@array/Status" />
 
 </RelativeLayout>

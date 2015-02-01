@@ -1,18 +1,23 @@
 package com.example.assignment1;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 
-public class Expense implements Comparable<Expense>{
+public class Expense implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8408038633806370834L;
 	private String name;
 	private String item;
 	private Date when = new Date();
-	private String des;
 	private float cost;
 	private String curr;
+	private String des;
 	
 	SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
 	
@@ -42,10 +47,7 @@ public class Expense implements Comparable<Expense>{
 	public Date getWhen(){
 		return when;
 	}
-	
-	public String getDescription(){
-		return des;
-	}
+
 	public float getCost(){
 		return cost;
 	}
@@ -54,7 +56,11 @@ public class Expense implements Comparable<Expense>{
 		return curr;
 	}
 	
-	public String toName() {
+	public String getDescription(){
+		return des;
+	}
+	
+	public String toString() {
 		return getName();
 	}
 
@@ -66,10 +72,6 @@ public class Expense implements Comparable<Expense>{
 		return getWhen();
 	}
 	
-	public String toDescription() {
-		return getDescription();
-	}
-	
 	public float toCost(){
 		return getCost();
 	}
@@ -77,20 +79,24 @@ public class Expense implements Comparable<Expense>{
 	public String toCurr(){
 		return getCurr();
 	}
+
+	public String toDescription() {
+		return getDescription();
+	}
 	
 	public String setName(String name){
 		this.name=name;
 		return name;
 	}
 	
+	public String setItem(String cate){
+		this.item=cate;
+		return cate;
+	}
+	
 	public Date setWhen(Date when){
 		this.when=when;
 		return when;
-	}
-
-	public String setDescription(String des){
-		this.des = des;
-		return des;
 	}
 	
 	public float setCost(float cost){
@@ -102,8 +108,9 @@ public class Expense implements Comparable<Expense>{
 		this.curr = curr;
 		return curr;
 	}
-
-	public int compareTo(Expense another) {
-		return getWhen().compareTo(another.getWhen());
+	
+	public String setDescription(String des){
+		this.des = des;
+		return des;
 	}
 }

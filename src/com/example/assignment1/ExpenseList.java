@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class ExpenseList {
-	protected ArrayList<Expense> ExpenseList = null;
+	protected ArrayList<Expense> ExpenseList;
 	protected ArrayList<Listener> listeners;
 
 	public ExpenseList(){	
@@ -42,10 +42,10 @@ public class ExpenseList {
 		return ExpenseList.contains(testExpense);
 	}
 	
-	public Expense chooseExpense() throws EmptyExpenseListException {
+	public Expense chooseExpense() throws EmptyListException {
 		int size = ExpenseList.size();
 		if (size <= 0) {
-			throw new EmptyExpenseListException();
+			throw new EmptyListException();
 		}
 		int index = 0;
 		return ExpenseList.get(index);

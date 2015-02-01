@@ -2,6 +2,10 @@ package com.example.assignment1;
 
 public class ListController {
 	private static ClaimList claimList = null;
+	
+	private static ExpenseList expenseList = null;
+	
+	
 	static public ClaimList getClaimList(){
 		if (claimList == null){
 			claimList = new ClaimList();
@@ -17,11 +21,11 @@ public class ListController {
 		getClaimList().editClaim();
 	}
 	
-	public Claim chooseClaim() throws EmptyClaimListException{
+	public Claim chooseClaim() throws EmptyListException{
 		return getClaimList().chooseClaim();
 	}
 	
-	private static ExpenseList expenseList = null;
+
 	
 	static public ExpenseList getExpenseList() {
 		if (expenseList == null) {
@@ -31,7 +35,7 @@ public class ListController {
 		return expenseList;
 	}
 
-	public Expense chooseExpense() throws EmptyExpenseListException {
+	public Expense chooseExpense() throws EmptyListException {
 		return getExpenseList().chooseExpense();
 	}
 
@@ -39,7 +43,7 @@ public class ListController {
 		getExpenseList().addExpense(item);
 	}
 
-	public void edittedExpense() {
+	public void editExpense() {
 		getExpenseList().editExpense();
 	}
 	

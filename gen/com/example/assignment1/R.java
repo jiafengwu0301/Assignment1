@@ -11,6 +11,7 @@ public final class R {
     public static final class array {
         public static final int Currency=0x7f060001;
         public static final int For_item=0x7f060000;
+        public static final int Status=0x7f060002;
     }
     public static final class attr {
     }
@@ -33,58 +34,76 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Add_Button=0x7f090005;
+        public static final int Add_Button=0x7f09000b;
         public static final int Cancel_Button=0x7f09000a;
-        public static final int Currency_spinner=0x7f09000e;
-        public static final int Currency_textView=0x7f09000b;
-        public static final int Description_editText=0x7f09000d;
-        public static final int Description_textView=0x7f090018;
+        public static final int Currency_spinner=0x7f09000f;
+        public static final int Currency_textView=0x7f09000c;
+        public static final int Description_editText=0x7f09000e;
+        public static final int Description_textView=0x7f090019;
         public static final int Descriptions_editText=0x7f090004;
         public static final int Descrption_textView=0x7f090006;
         public static final int Destination_editText=0x7f090007;
         public static final int Destination_textView=0x7f090001;
         public static final int Expense_View=0x7f090000;
-        public static final int Expense_add_button=0x7f09000f;
-        public static final int Expense_cancel_button=0x7f090011;
+        public static final int Expense_add_button=0x7f090010;
+        public static final int Expense_cancel_button=0x7f090012;
         public static final int FromDate_textView=0x7f090008;
         public static final int From_editText=0x7f090002;
-        public static final int HowMuch_editText=0x7f09000c;
-        public static final int HowMuch_textView=0x7f090017;
+        public static final int HowMuch_editText=0x7f09000d;
+        public static final int HowMuch_textView=0x7f090018;
         public static final int ToDate_textView=0x7f090009;
         public static final int To_editText=0x7f090003;
-        public static final int When_editText=0x7f090010;
-        public static final int When_textView=0x7f090013;
-        public static final int action_settings=0x7f090023;
-        public static final int addClaim=0x7f090025;
-        public static final int addExpense=0x7f090024;
-        public static final int category_textView=0x7f090014;
-        public static final int des_Testview=0x7f090019;
-        public static final int edit_Description=0x7f090021;
-        public static final int edit_Destination_textView=0x7f09001a;
-        public static final int edit_button=0x7f09001f;
-        public static final int edit_cancel_button=0x7f09001e;
-        public static final int edit_descriptions_textView=0x7f090020;
-        public static final int expense_listView=0x7f090022;
-        public static final int expense_name_editText=0x7f090016;
-        public static final int expense_name_textView=0x7f090015;
-        public static final int for_items_spinner=0x7f090012;
-        public static final int from_edit_editText=0x7f09001b;
-        public static final int textView2=0x7f09001c;
-        public static final int to_edit_editText=0x7f09001d;
+        public static final int When_editText=0x7f090011;
+        public static final int When_textView=0x7f090014;
+        public static final int action_settings=0x7f090033;
+        public static final int addClaim=0x7f090035;
+        public static final int addExpense=0x7f090034;
+        public static final int cat_spinner=0x7f090029;
+        public static final int cat_text=0x7f090024;
+        public static final int category_textView=0x7f090015;
+        public static final int des_Testview=0x7f09001a;
+        public static final int ed_exp_name_text=0x7f090030;
+        public static final int ed_st_spinner=0x7f090023;
+        public static final int edit_Description=0x7f090022;
+        public static final int edit_Destination_textView=0x7f09001b;
+        public static final int edit_button=0x7f090020;
+        public static final int edit_can_but=0x7f090031;
+        public static final int edit_cancel_button=0x7f09001f;
+        public static final int edit_descriptions_textView=0x7f090021;
+        public static final int edit_edit_but=0x7f090027;
+        public static final int exp_cost_edit=0x7f09002a;
+        public static final int exp_cost_text=0x7f090028;
+        public static final int exp_curr_spinner=0x7f09002c;
+        public static final int exp_curr_text=0x7f09002b;
+        public static final int exp_date_edit=0x7f09002d;
+        public static final int exp_des_edit=0x7f09002f;
+        public static final int exp_des_text=0x7f09002e;
+        public static final int exp_when_text=0x7f090026;
+        public static final int expense_listView=0x7f090032;
+        public static final int expense_name_editText=0x7f090017;
+        public static final int expense_name_textView=0x7f090016;
+        public static final int for_items_spinner=0x7f090013;
+        public static final int from_edit_editText=0x7f09001c;
+        public static final int name_edit=0x7f090025;
+        public static final int st_spinner=0x7f090005;
+        public static final int textView2=0x7f09001d;
+        public static final int to_edit_editText=0x7f09001e;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int add_claim=0x7f030001;
         public static final int add_expense=0x7f030002;
         public static final int edit_claim=0x7f030003;
-        public static final int list_expense=0x7f030004;
+        public static final int edit_expense=0x7f030004;
+        public static final int list_expense=0x7f030005;
     }
     public static final class menu {
         public static final int add_claim=0x7f080000;
         public static final int add_expense=0x7f080001;
         public static final int edit_claim=0x7f080002;
-        public static final int list_expense=0x7f080003;
-        public static final int main=0x7f080004;
+        public static final int edit_expense=0x7f080003;
+        public static final int list_expense=0x7f080004;
+        public static final int main=0x7f080005;
     }
     public static final class string {
         public static final int action_settings=0x7f050002;
@@ -93,6 +112,7 @@ public final class R {
         public static final int title_activity_add_claim=0x7f050003;
         public static final int title_activity_add_expense=0x7f050005;
         public static final int title_activity_edit_claim=0x7f050006;
+        public static final int title_activity_edit_expense=0x7f050007;
         public static final int title_activity_list_expense=0x7f050004;
     }
     public static final class style {

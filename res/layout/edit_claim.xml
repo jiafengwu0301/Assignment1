@@ -106,11 +106,19 @@
         android:id="@+id/edit_Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/edit_cancel_button"
+        android:layout_above="@+id/ed_st_spinner"
         android:layout_alignLeft="@+id/edit_descriptions_textView"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/edit_descriptions_textView"
         android:ems="10"
         android:inputType="textMultiLine" />
+
+    <Spinner
+        android:id="@+id/ed_st_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edit_cancel_button"
+        android:layout_alignParentLeft="true"
+        android:entries="@array/Status" />
 
 </RelativeLayout>
