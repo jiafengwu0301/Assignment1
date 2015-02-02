@@ -39,22 +39,25 @@ public class ClaimList implements Serializable{
 		claimList.add(testClaim);
 		notifyListeners();
 	}
+	
+	public void notifyListeners() {
+		for (Listener listener: listeners) {
+			listener.update();
+		}
+	}
 
 	public void deleteClaim(Claim testClaim) {		
 		claimList.remove(testClaim);	
 		notifyListeners();
 	}
 	
-	public void editClaim() {
+	public void removeClaim(Claim testClaim) {
+		claimList.remove(testClaim);
 		notifyListeners();
 	}
-
-	public int size(){	
-		return claimList.size();		
-	}
-
-	public boolean contains(Claim testClaim) {
-		return claimList.contains(testClaim);
+	
+	public void editClaim() {
+		notifyListeners();
 	}
 	
 	public Claim chooseClaim() throws EmptyListException {
@@ -65,11 +68,13 @@ public class ClaimList implements Serializable{
 		int index = 0;
 		return claimList.get(index);
 	}
-	
-	public void notifyListeners() {
-		for (Listener listener: listeners) {
-			listener.update();
-		}
+
+	public int size(){	
+		return claimList.size();		
+	}
+
+	public boolean contains(Claim testClaim) {
+		return claimList.contains(testClaim);
 	}
 	
 	public void addListener(Listener l) {

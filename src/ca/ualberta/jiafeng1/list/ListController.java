@@ -10,9 +10,16 @@ You should have received a copy of the GNU General Public License along with thi
 
 package ca.ualberta.jiafeng1.list;
 
+import java.io.Serializable;
+
 
 //This code is modified by reference code from Student Picker
-public class ListController {
+public class ListController implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9018467951914944570L;
+
 	private static ClaimList claimList = null;
 	
 	private static ExpenseList expenseList = null;
@@ -36,6 +43,7 @@ public class ListController {
 	public Claim chooseClaim() throws EmptyListException{
 		return getClaimList().chooseClaim();
 	}
+	
 	
 
 	
