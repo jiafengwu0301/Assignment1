@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.assignment1.EditClaimActivity" >
+    tools:context="ca.ualberta.jiafeng1.mod_list.EditClaimActivity" >
 
     <TextView
         android:id="@+id/des_Testview"
