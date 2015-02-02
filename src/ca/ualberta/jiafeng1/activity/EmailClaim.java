@@ -54,7 +54,7 @@ public class EmailClaim extends Activity {
 			  email.setType("message/rfc822");
  
 			  startActivity(Intent.createChooser(email, "Choose an Email client :"));
- 
+			  finish();
 			}
 		});
 	}

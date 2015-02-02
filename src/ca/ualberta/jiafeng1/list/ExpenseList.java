@@ -22,47 +22,21 @@ public class ExpenseList implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 2450981085621593182L;
-	protected ArrayList<Expense> ExpenseList;
+	protected ArrayList<Expense> expenseList;
 	protected ArrayList<Listener> listeners;
 
 	public ExpenseList(){	
-		ExpenseList = new ArrayList<Expense>();
+		expenseList = new ArrayList<Expense>();
 		listeners = new ArrayList<Listener>();
 	}
 	
 	public Collection<Expense> getExpense() {
-		return ExpenseList;
+		return expenseList;
 	}
 
 	public void addExpense(Expense testExpense) {		
-		ExpenseList.add(testExpense);
+		expenseList.add(testExpense);
 		notifyListeners();
-	}
-
-	public void deleteExpense(Expense testExpense) {		
-		ExpenseList.remove(testExpense);	
-		notifyListeners();
-	}
-	
-	public void editExpense() {
-		notifyListeners();
-	}
-
-	public int size(){	
-		return ExpenseList.size();		
-	}
-
-	public boolean contains(Expense testExpense) {
-		return ExpenseList.contains(testExpense);
-	}
-	
-	public Expense chooseExpense() throws EmptyListException {
-		int size = ExpenseList.size();
-		if (size <= 0) {
-			throw new EmptyListException();
-		}
-		int index = 0;
-		return ExpenseList.get(index);
 	}
 	
 	public void notifyListeners() {
@@ -70,6 +44,39 @@ public class ExpenseList implements Serializable {
 			listener.update();
 		}
 	}
+
+	public void deleteExpense(Expense testExpense) {		
+		expenseList.remove(testExpense);	
+		notifyListeners();
+	}
+	
+	public void editExpense() {
+		notifyListeners();
+	}
+	
+	public void removeExpense(Claim testExpense) {
+		expenseList.remove(testExpense);
+		notifyListeners();
+	}
+
+	public int size(){	
+		return expenseList.size();		
+	}
+
+	public boolean contains(Expense testExpense) {
+		return expenseList.contains(testExpense);
+	}
+	
+	public Expense chooseExpense() throws EmptyListException {
+		int size = expenseList.size();
+		if (size <= 0) {
+			throw new EmptyListException();
+		}
+		int index = 0;
+		return expenseList.get(index);
+	}
+	
+	
 	
 	public void addListener(Listener l) {
 		listeners.add(l);

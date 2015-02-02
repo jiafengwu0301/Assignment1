@@ -8,4 +8,44 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="ca.ualberta.jiafeng1.activity.ClaimSummary" >
 
+    <TextView
+        android:id="@+id/totalCAD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Total CAD:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/cad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/totalCAD"
+        android:layout_alignBottom="@+id/totalCAD"
+        android:layout_marginLeft="22dp"
+        android:layout_toRightOf="@+id/totalCAD"
+        android:text="60"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/totaleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/totalCAD"
+        android:layout_below="@+id/totalCAD"
+        android:layout_marginTop="14dp"
+        android:text="Total EUR:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/eur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/totaleur"
+        android:layout_alignBottom="@+id/totaleur"
+        android:layout_alignLeft="@+id/cad"
+        android:text="1040"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>
