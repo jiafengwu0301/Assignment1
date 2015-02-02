@@ -23,7 +23,7 @@ public class ClaimList implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -272342298747450793L;
-	protected ArrayList<Claim> claimList = null;
+	protected ArrayList<Claim> claimList;
 	protected ArrayList<Listener> listeners;
 
 	public ClaimList(){	
