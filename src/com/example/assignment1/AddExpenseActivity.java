@@ -1,3 +1,13 @@
+
+/*
+Expense Tracker: record the expense Copyright (C) 2015 Jiafeng Wu jiafeng1@ualberta.ca
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
+*/
 package com.example.assignment1;
 
 
@@ -14,6 +24,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+//This code is modified by reference code from Student Picker
+
 public class AddExpenseActivity extends Activity {
 
 	@Override
@@ -26,14 +38,12 @@ public class AddExpenseActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// Test text "Added claim!"
 				Toast.makeText(AddExpenseActivity.this, "Add a Expense!", Toast.LENGTH_SHORT).show();
-				int setposition = Position.getPosition();
-				Collection<Claim> claims = ListController.getClaimList().getClaim();
-				ArrayList<Claim> alist = new ArrayList<Claim>(claims);
-				ListController controller = alist.get(setposition).getController();
+				int claimpos = Position.getPosition();
+				Collection<Claim> claim = ListController.getClaimList().getClaim();
+				ArrayList<Claim> claimlist = new ArrayList<Claim>(claim);
+				ListController controller = claimlist.get(claimpos).getController();
 				
-				// extract our name of the claim from the edit text and add it to our claim list
 				EditText name = (EditText) findViewById(R.id.expense_name_editText);
 				Spinner category = (Spinner) findViewById(R.id.for_items_spinner);
 				String cate = category.getSelectedItem().toString();
@@ -41,7 +51,7 @@ public class AddExpenseActivity extends Activity {
 				EditText cost = (EditText) findViewById(R.id.HowMuch_editText);
 				float fcost = 0;
 				if (cost.getText().toString().matches("")) {
-					// do nothing 
+
 				} else {
 					fcost = Float.valueOf(cost.getText().toString());
 				}

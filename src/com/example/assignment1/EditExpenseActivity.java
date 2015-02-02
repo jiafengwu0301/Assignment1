@@ -1,3 +1,13 @@
+/*
+Expense Tracker: record the expense Copyright (C) 2015 Jiafeng Wu jiafeng1@ualberta.ca
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
+*/
+
 package com.example.assignment1;
 
 import java.text.ParseException;
@@ -58,7 +68,6 @@ public class EditExpenseActivity extends Activity {
 			public void onClick(View v) {
 				Toast.makeText(EditExpenseActivity.this, "Updated Item!", Toast.LENGTH_SHORT).show();
 				
-				// call our EditTexts and spinners for the new user values 
 				EditText name = (EditText) findViewById(R.id.name_edit);
 				EditText when = (EditText) findViewById(R.id.exp_date_edit);
 				EditText cost = (EditText) findViewById(R.id.exp_cost_edit);
@@ -69,7 +78,7 @@ public class EditExpenseActivity extends Activity {
 				String curr = currency.getSelectedItem().toString();
 				float fcost = 0;
 				if (cost.getText().toString().matches("")) {
-					// do nothing 
+					
 				} else {
 					fcost = Float.valueOf(cost.getText().toString());
 				}
@@ -81,15 +90,15 @@ public class EditExpenseActivity extends Activity {
 				ArrayList<Claim> claimlist = new ArrayList<Claim>(claim);
 				ArrayList<Expense> expense = claimlist.get(claimpos).getItemArray();
 				
-				((Expense) expense.get(expensepos)).setName(name.getText().toString());
+				expense.get(expensepos).setName(name.getText().toString());
 				expense.get(expensepos).setItem(cate);
 				SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
 				try {
-					((Expense) expense.get(expensepos)).setWhen(date.parse(when.getText().toString()));
+					expense.get(expensepos).setWhen(date.parse(when.getText().toString()));
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}
-				((Expense) expense.get(expensepos)).setDescription(des.getText().toString());
+				expense.get(expensepos).setDescription(des.getText().toString());
 				expense.get(expensepos).setCost(fcost);
 				expense.get(expensepos).setCurr(curr);
 				
@@ -133,6 +142,7 @@ public class EditExpenseActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	//http://stackoverflow.com/questions/2390102/how-to-set-selected-item-of-spinner-by-value-not-by-position 01/02/2015
 	private int getIndex(Spinner spinner, String str) {
 		
 		int index = 0;

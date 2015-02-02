@@ -1,3 +1,13 @@
+/*
+Expense Tracker: record the expense Copyright (C) 2015 Jiafeng Wu jiafeng1@ualberta.ca
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
+*/
+
 package com.example.assignment1;
 
 import java.text.ParseException;
@@ -16,32 +26,30 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class EditClaimActivity extends Activity {
-	
-	// We only enter this class when the user wants to update his/her claim
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super .onCreate(savedInstanceState);
-		// set up our layout to be edit_claim
 		setContentView(R.layout.edit_claim);
 		getActionBar().setTitle("Edit Claim");
 
 		Collection<Claim> claim = ListController.getClaimList().getClaim();
-		ArrayList<Claim> list = new ArrayList<Claim>(claim);
-		int setposition = Position.getPosition();
+		ArrayList<Claim> claimlist = new ArrayList<Claim>(claim);
+		int claimpos = Position.getPosition();
 		EditText den = (EditText) findViewById(R.id.edit_Destination_textView);
 		EditText fdate = (EditText) findViewById(R.id.from_edit_editText);
 		EditText tdate = (EditText) findViewById(R.id.to_edit_editText);
 		EditText des = (EditText) findViewById(R.id.edit_Description);
 		Spinner status = (Spinner) findViewById(R.id.ed_st_spinner);
-		status.setSelection(getIndex(status, list.get(setposition).statusString()));
+		status.setSelection(getIndex(status, claimlist.get(claimpos).statusString()));
 		
 		
-		den.setText(list.get(setposition).toString());
+		den.setText(claimlist.get(claimpos).toString());
 		
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
-		fdate.setText(date.format(list.get(setposition).fdateString()));
-		tdate.setText(date.format(list.get(setposition).tdateString()));
-		des.setText(list.get(setposition).desString());
+		fdate.setText(date.format(claimlist.get(claimpos).fdateString()));
+		tdate.setText(date.format(claimlist.get(claimpos).tdateString()));
+		des.setText(claimlist.get(claimpos).desString());
 		
 		Button editbutton = (Button) findViewById(R.id.edit_button);
 		editbutton.setOnClickListener(new View.OnClickListener() {
@@ -56,24 +64,24 @@ public class EditClaimActivity extends Activity {
 				Spinner status = (Spinner) findViewById(R.id.ed_st_spinner);
 				String st = status.getSelectedItem().toString();
 				
-				Collection<Claim> claims = ListController.getClaimList().getClaim();
-				ArrayList<Claim> list = new ArrayList<Claim>(claims);
-				int setposition = Position.getPosition();
-				((Claim) list.get(setposition)).setDenstation(den.getText().toString());
+				Collection<Claim> claim = ListController.getClaimList().getClaim();
+				ArrayList<Claim> claimlist = new ArrayList<Claim>(claim);
+				int claimpos = Position.getPosition();
+				claimlist.get(claimpos).setDenstation(den.getText().toString());
 				
 				SimpleDateFormat date = new SimpleDateFormat("yyyy-mm-dd",Locale.getDefault());
 				try {
-					((Claim) list.get(setposition)).setDfrom(date.parse(fdate.getText().toString()));
+					claimlist.get(claimpos).setDfrom(date.parse(fdate.getText().toString()));
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}
 				try {
-					((Claim) list.get(setposition)).setDTo(date.parse(tdate.getText().toString()));
+					claimlist.get(claimpos).setDTo(date.parse(tdate.getText().toString()));
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}
-				((Claim) list.get(setposition)).setDes(des.getText().toString());
-				list.get(setposition).setStatus(st);
+				claimlist.get(claimpos).setDes(des.getText().toString());
+				claimlist.get(claimpos).setStatus(st);
 				ListController controller = new ListController();
 				controller.editClaim();
 				finish();
@@ -88,7 +96,7 @@ public class EditClaimActivity extends Activity {
 		Intent intent = new Intent(EditClaimActivity .this, MainActivity.class);
 		startActivity(intent);
 	}
-	
+	//http://stackoverflow.com/questions/2390102/how-to-set-selected-item-of-spinner-by-value-not-by-position 01/02/2015
 	private int getIndex(Spinner spinner, String str) {
 		
 		int index = 0;

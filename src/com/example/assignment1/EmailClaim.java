@@ -1,3 +1,14 @@
+/*
+Expense Tracker: record the expense Copyright (C) 2015 Jiafeng Wu jiafeng1@ualberta.ca
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
+*/
+
+
 package com.example.assignment1;
 
 import android.app.Activity;
@@ -16,6 +27,7 @@ public class EmailClaim extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.email_claim);
+		
 		//http://www.mkyong.com/android/how-to-send-email-in-android/  01/31/2015
 		Button buttonSend = (Button) findViewById(R.id.send_button);
 		final EditText textTo = (EditText) findViewById(R.id.emailadd_edit);
@@ -33,8 +45,6 @@ public class EmailClaim extends Activity {
  
 			  Intent email = new Intent(Intent.ACTION_SEND);
 			  email.putExtra(Intent.EXTRA_EMAIL, new String[]{ to});
-			  //email.putExtra(Intent.EXTRA_CC, new String[]{ to});
-			  //email.putExtra(Intent.EXTRA_BCC, new String[]{to});
 			  email.putExtra(Intent.EXTRA_SUBJECT, subject);
 			  email.putExtra(Intent.EXTRA_TEXT, message);
  
