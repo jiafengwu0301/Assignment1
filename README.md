@@ -26,6 +26,8 @@ To email the claim. Go to the claim, click Email Cliam at the menu section. Afte
 
 By exit the app, go to the main activity. Then, double click the back button to exit.
 
+The demo video youtube link: http://youtu.be/0k4Sp9ZVaGo
+
 #License
 Expense Tracker: record the expense Copyright (C) 2015 Jiafeng Wu jiafeng1@ualberta.ca
 
