@@ -3,8 +3,6 @@ CUMPUT 301 Assignment1
 
 Name: Jiafene Wu
 
-Student ID: 1358470
-
 CSID: jiafeng1
 
 Lecture Section: LEC B2
